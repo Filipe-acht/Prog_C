@@ -1,1 +1,2 @@
-# Prog_C
+# Programação com linguagem C 
+### Ciência da Computação P2
