@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1637448563 source:c:\users\filip\documents\ciência da computação\cc p2\workspaces c\calculadora2.0 ii\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+

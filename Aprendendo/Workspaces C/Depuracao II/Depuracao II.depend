@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1637445807 source:c:\users\filip\documents\ciência da computação\cc p2\workspaces c\depuracao ii\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
