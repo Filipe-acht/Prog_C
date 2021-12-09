@@ -96,7 +96,6 @@ void add_palavra(){
 }
 
 void forca(int erro){
-    //cabecalho();
 
     if(erro==0){
 
@@ -203,7 +202,7 @@ void escolhe_forma_jogar(){
     printf("4-Animal\n");
     printf("5-Modelo de carro\n");
     printf("6-Time de futebol\n");
-    printf("7-Palavra adicionada:\n");
+    printf("7-Palavra adicionada\n");
     printf("Informe a opção desejada: ");
     scanf("%d",&op_menu_tema);
     printf("\n");
@@ -270,7 +269,7 @@ void escolhe_forma_jogar(){
     }else if(op_jogo==2){
         system("cls");
         printf("Informe o nome do jogador 1:\n");
-        scanf(" %s", &J.jogador1);// verificar como armazenar os nomes
+        scanf(" %s", &J.jogador1);
         fflush(stdin);
         printf("Informe o nome do jogador 2:\n");
         fflush(stdin);
@@ -293,7 +292,7 @@ void escolhe_forma_jogar(){
 
 void Jogo_op1(char palavra[50]){
 
-    system("cls");
+    //system("cls");
     strcpy(tela, palavra);
     for(int i=0;i<strlen(tela);i++){
         tela[i]='_';
@@ -343,9 +342,7 @@ void Jogo_op1(char palavra[50]){
         if(erros==6){
             system("cls");
             forca(erros);
-            printf("O jogador(a) %s perdeu.\n\n",J.jogador1);
-            printf("Parabéns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador2, palavra);
-            ranking(J.jogador2);
+            printf("\nO jogador(a) %s perdeu.\n\n",J.jogador1);
             erros=0;
             return menu();
         }
@@ -416,6 +413,7 @@ void Jogo_op2(){
             system("cls");
             forca(erros);
             printf("\nO jogador(a) %s perdeu.\n\n",J.jogador1);
+            printf("\n\nParabéns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador2, palavra);
             return menu();
         }
 
@@ -427,8 +425,6 @@ void Jogo_op2(){
 
 void ranking(char nome[50]){
 
-    //precisa fazer uma comparação entre os nomes
-    //se o nome existir adiciona uma vitória se não adiciona o nome e coloca uma vitória
 
   FILE * r;
 
@@ -438,12 +434,8 @@ void ranking(char nome[50]){
         printf("\nErro ao abrir o arquivo ranking");
         return 1;
     }
-    //char nome[255];
-    //nome[255]=J.jogador1;
 
     fprintf(r,"%s\n",nome);
-
-
 
   int fechou;
     fechou = fclose(r);
@@ -465,7 +457,6 @@ void imprime_ranking(){
     r = fopen("ranking.txt", "r");
 
     char nome[255];
-    //nome[255]=J.jogador1;
     if(r==0){
         printf("\nErro ao abrir o arquivo ranking");
         return 1;
@@ -473,9 +464,6 @@ void imprime_ranking(){
     while(fgets(nome,20,r)!=NULL){
         printf(nome);
     }
-
-
-
 
 
     int fechou;
