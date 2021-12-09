@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1639040703 source:d:\ciencias da computação\p2\teorico c\projeto_novo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<time.h>
+
