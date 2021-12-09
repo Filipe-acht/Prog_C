@@ -38,13 +38,13 @@ void menu(){
     printf("---------------------------------------------Menu do jogo---------------------------------------------\n");
 
     int op_menu;
-    printf("\nEscolha a opção desejada:\n");
+    printf("\nEscolha a opÃ§Ã£o desejada:\n");
     printf("1-Jogar\n");
     printf("2-Ver ranking\n");
     printf("3-Cadastrar palavra\n");
-    printf("4-Créditos\n");
+    printf("4-CrÃ©ditos\n");
     printf("5-Sair\n\n");
-    printf("Opção desejada: ");
+    printf("OpÃ§Ã£o desejada: ");
     scanf("%d",&op_menu);
 
 
@@ -73,7 +73,7 @@ void menu(){
         }
         default:{
             system("cls");
-            printf("Opção invalida!\n");
+            printf("OpÃ§Ã£o invalida!\n");
             fflush(stdin);
             return menu();
             break;
@@ -174,7 +174,7 @@ void forca(int erro){
         printf("\n|           ");
         printf("\n-           ");
 
-        printf("Você perdeu!");
+        printf("VocÃª perdeu!");
     }
 
 }
@@ -184,7 +184,7 @@ void escolhe_forma_jogar(){
 
     system("cls");
 
-    printf("Escolha a forma de jogar:\n1-Jogar contra o computador.\n2-Jogar contra uma pessoa.\nOpção escolhida: ");
+    printf("Escolha a forma de jogar:\n1-Jogar contra o computador.\n2-Jogar contra uma pessoa.\nOpÃ§Ã£o escolhida: ");
     scanf("%d", &op_jogo);
 
     if(op_jogo==1){
@@ -195,7 +195,7 @@ void escolhe_forma_jogar(){
 
     int op_menu_tema;
 
-    printf("\nEscolha o tema que você deseja jogar:\n");
+    printf("\nEscolha o tema que vocÃª deseja jogar:\n");
     printf("1-Objeto\n");
     printf("2-Nome\n");
     printf("3-Cidade\n");
@@ -203,7 +203,7 @@ void escolhe_forma_jogar(){
     printf("5-Modelo de carro\n");
     printf("6-Time de futebol\n");
     printf("7-Palavra adicionada\n");
-    printf("Informe a opção desejada: ");
+    printf("Informe a opÃ§Ã£o desejada: ");
     scanf("%d",&op_menu_tema);
     printf("\n");
 
@@ -257,7 +257,7 @@ void escolhe_forma_jogar(){
             Jogo_op1(nova_palavra[j]);
 
         default:{
-            printf("Opção inválida!");
+            printf("OpÃ§Ã£o invÃ¡lida!");
             break;
         }
 
@@ -283,7 +283,7 @@ void escolhe_forma_jogar(){
 
     }else{
         system("cls");
-        printf("\nOpção inválida!\n");
+        printf("\nOpÃ§Ã£o invÃ¡lida!\n");
         fflush(stdin);
         return escolhe_forma_jogar();
     }
@@ -291,7 +291,7 @@ void escolhe_forma_jogar(){
 }
 
 void Jogo_op1(char palavra[50]){
-
+    erros=0;
     //system("cls");
     strcpy(tela, palavra);
     for(int i=0;i<strlen(tela);i++){
@@ -317,14 +317,14 @@ void Jogo_op1(char palavra[50]){
         for(i=0;i<strlen(tela);i++){
 
             if(letra==palavra[i]){
-                printf("Você acertou: a palavra tem a letra %c\n\n", letra);
+                printf("VocÃª acertou: a palavra tem a letra %c\n\n", letra);
                 tela[i]=letra;
                 errou=0;
             }
 
         }
         if(errou==1){
-            printf("\nVocê errou a palavra NÃO tem a letra %c\n\n", letra);
+            printf("\nVocÃª errou a palavra NÃƒO tem a letra %c\n\n", letra);
             erros++;
 
         }
@@ -333,7 +333,7 @@ void Jogo_op1(char palavra[50]){
 
         if(strcmp(tela,palavra)==0){
             system("cls");
-            printf("Parabéns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador1, palavra);
+            printf("ParabÃ©ns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador1, palavra);
             ranking(J.jogador1);
             erros=0;
             return menu();
@@ -368,7 +368,7 @@ void Jogo_op2(){
 
     while(1){
         //system("cls");
-        printf("O tema é: %s",tema);
+        printf("O tema Ã©: %s",tema);
 
         forca(erros);
         printf("\n");
@@ -387,14 +387,14 @@ void Jogo_op2(){
         for(i=0;i<strlen(tela);i++){
 
             if(letra==palavra[i]){
-                printf("Você acertou: a palavra tem a letra %c\n\n", letra);
+                printf("VocÃª acertou: a palavra tem a letra %c\n\n", letra);
                 tela[i]=letra;
                 errou=0;
             }
 
         }
         if(errou==1){
-            printf("\nVocê errou a palavra NÃO tem a letra %c\n\n", letra);
+            printf("\nVocÃª errou a palavra NÃƒO tem a letra %c\n\n", letra);
             erros++;
 
         }
@@ -403,7 +403,7 @@ void Jogo_op2(){
 
         if(strcmp(tela,palavra)==0){
             system("cls");
-            printf("\n\nParabéns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador1, palavra);
+            printf("\n\nParabÃ©ns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador1, palavra);
             ranking(J.jogador1);
 
             return menu();
@@ -413,7 +413,7 @@ void Jogo_op2(){
             system("cls");
             forca(erros);
             printf("\nO jogador(a) %s perdeu.\n\n",J.jogador1);
-            printf("\n\nParabéns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador2, palavra);
+            printf("\n\nParabÃ©ns, o jogador(a) %s ganhou!\nA palavra era: %s\n\n",J.jogador2, palavra);
             return menu();
         }
 
@@ -450,7 +450,7 @@ void ranking(char nome[50]){
 void imprime_ranking(){
     system("cls");
     printf("********************************************Ranking********************************************\n\n");
-    printf("\n\nPrezado usuário nosso jogo ainda não consegue exibir o menu ranking de forma correta.\nInfelizmente nosso menu só imprime o nome dos jogaroes que ganharam.\nA quantidade de vezes que seu nome aparece é a aquantidade de vezes que você ganhou!\n\n\n");
+    printf("\n\nPrezado usuÃ¡rio nosso jogo ainda nÃ£o consegue exibir o menu ranking de forma correta.\nInfelizmente nosso menu sÃ³ imprime o nome dos jogaroes que ganharam.\nA quantidade de vezes que seu nome aparece Ã© a aquantidade de vezes que vocÃª ganhou!\n\n\n");
 
     FILE * r;
 
@@ -483,9 +483,9 @@ void creditos(){
 
     system("cls");
 
-    printf("\n\n***************************************************Créditos do Jogo da Forca***************************************************\n\n\n");
-    printf("Trabalho apresentado às disciplinas Técnicas de Desenvolvimento de Algoritmos e Laboratório de Desenvolvimento de Algoritmos,\nno Centro Universitário de  João Pessoa - Unipê, \ncomo requisito parcial para obtenção de grau referente ao semestre 2021.2, \nsob a orientação dos Profs. Leonardo Angelo Virginio de Souto e Douglas Andrade de Menezes.\n\n");
-    printf("Criadores:\n  -FILIPE NASC. COSTA SOARES\n  -NICOLY MATOS MARTINS\n  -RINALDO RODRIGUES DE CARVALHO JÚNIOR\n\n");
+    printf("\n\n***************************************************CrÃ©ditos do Jogo da Forca***************************************************\n\n\n");
+    printf("Trabalho apresentado Ã s disciplinas TÃ©cnicas de Desenvolvimento de Algoritmos e LaboratÃ³rio de Desenvolvimento de Algoritmos,\nno Centro UniversitÃ¡rio de  JoÃ£o Pessoa - UnipÃª, \ncomo requisito parcial para obtenÃ§Ã£o de grau referente ao semestre 2021.2, \nsob a orientaÃ§Ã£o dos Profs. Leonardo Angelo Virginio de Souto e Douglas Andrade de Menezes.\n\n");
+    printf("Criadores:\n  -FILIPE NASC. COSTA SOARES\n  -NICOLY MATOS MARTINS\n  -RINALDO RODRIGUES DE CARVALHO JÃšNIOR\n\n");
     printf("Ano: 2021.\n");
     printf("\n\n\n******************************************************************************************************************************\n\n");
 }
